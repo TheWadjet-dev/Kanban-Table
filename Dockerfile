@@ -1,14 +1,23 @@
-# Use oficial PHP imagen 
-FROM php:8.1-cli
+# Usar una imagen oficial de Node.js como base para ejecutar TypeScript y el servidor web
+FROM node:18-slim
 
-# Configuration path
+# Crear un directorio para la aplicación
 WORKDIR /app
 
-# Copy files in container
-COPY . /app
+# Copiar los archivos package.json y package-lock.json (si los tienes)
+COPY package*.json ./
 
-# Listen port 8080 
+# Instalar dependencias de Node (como http-server para servir los archivos estáticos)
+RUN npm install -g typescript http-server
+
+# Copiar el código fuente de la aplicación al contenedor
+COPY . .
+
+# Compilar el código TypeScript a JavaScript
+RUN tsc
+
+# Exponer el puerto que usaremos para servir la aplicación
 EXPOSE 8080
 
-# Start service
-CMD ["php", "-S", "0.0.0.0:8080", "-t", "/app"]
+# Usar http-server para servir la aplicación una vez compilada
+CMD ["http-server", "dist", "-p", "8080"]
