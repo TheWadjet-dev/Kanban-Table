@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora en PHP</title>
+    <title>PHP Calculator</title>
 </head>
 <body>
-    <h2>Calculadora en PHP</h2>
+    <h2>PHP Calculator</h2>
     <form method="post">
-        <label for="num1">Número 1:</label>
+        <label for="num1">Number 1:</label>
         <input type="number" name="num1" required>
         <br><br>
-        <label for="num2">Número 2:</label>
+        <label for="num2">Number 2:</label>
         <input type="number" name="num2" required>
         <br><br>
-        <label for="operation">Operación:</label>
+        <label for="operation">Operation:</label>
         <select name="operation">
-            <option value="sum">Suma</option>
-            <option value="sub">Resta</option>
-            <option value="mul">Multiplicación</option>
-            <option value="div">División</option>
+            <option value="sum">Addition</option>
+            <option value="sub">Subtraction</option>
+            <option value="mul">Multiplication</option>
+            <option value="div">Division</option>
         </select>
         <br><br>
-        <input type="submit" value="Calcular">
+        <input type="submit" value="Calculate">
     </form>
 
     <?php
@@ -47,14 +47,14 @@
                 if ($num2 != 0) {
                     $result = $num1 / $num2;
                 } else {
-                    $result = "Error: No se puede dividir entre 0";
+                    $result = "Error: Cannot divide by 0";
                 }
                 break;
             default:
-                $result = "Operación no válida";
+                $result = "Invalid operation";
         }
 
-        echo "<h3>Resultado: $result</h3>";
+        echo "<h3>Result: $result</h3>";
     }
     ?>
 </body>
