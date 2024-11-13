@@ -1,5 +1,5 @@
 # Usar una imagen oficial de Node.js como base para ejecutar TypeScript y el servidor web
-FROM node:18-slim
+FROM node:18
 
 # Crear un directorio para la aplicación
 WORKDIR /app
