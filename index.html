@@ -1,37 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kanban Table</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de visitas</title>
 </head>
 <body>
+    <h1>Contador de visitas a la página</h1>
+    <p>Visitas totales: <span id="visit-count">0</span></p>
 
-  <div class="kanban-container">
-    <div class="kanban-header">
-      <h1>Kanban Table</h1>
-      <button id="add-task-btn">Add Task</button>
-    </div>
-
-    <div class="kanban-board">
-      <div class="kanban-column" id="todo-column">
-        <h2>To Do</h2>
-        <ul id="todo-list" class="task-list"></ul>
-      </div>
-
-      <div class="kanban-column" id="inprogress-column">
-        <h2>In Progress</h2>
-        <ul id="inprogress-list" class="task-list"></ul>
-      </div>
-
-      <div class="kanban-column" id="done-column">
-        <h2>Done</h2>
-        <ul id="done-list" class="task-list"></ul>
-      </div>
-    </div>
-  </div>
-
-  <script src="app.ts"></script>
+    <script src="app.js"></script>
 </body>
 </html>
